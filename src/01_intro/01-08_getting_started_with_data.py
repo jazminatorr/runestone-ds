@@ -5,18 +5,13 @@
 # Interpreted language
 # Object-oriented
 # Python interpreter >>>
-# An object is an instance of a class
 
-# integer division (//): when two integers are divided, the result 
-# is a floating point. The integer division operator returns the integer 
-# portion of the quotient by truncating any fractional part.
 
 # A Python variable is created when a name is used for the first time on
 # the left-hand side of an assignment statement. Assignment statements 
 # provide a way to associate a name with a value. The variable will hold a 
 # reference to a piece of data and not the data itself.
                  
-# Unordered collections: sets, dictionaries
 
 
 
@@ -30,18 +25,42 @@
 ###########################################################################################
 ###########################################################################################
 ###########################################################################################
+# An object is an instance of a class
+
+
 
 ###########################################################################################
 ###########################################################################################
 ########## Sect 1.8.1: Built-In Atomic Data Types 
 ###########################################################################################
 ###########################################################################################
+# Two main built-in numeric 
+#   1. data types
+#       a. int
+#       b. float
+#       --> Supported operations for numeric types: +, -, *, /, %, // 
+#         NOTE: integer division (//): when two integers are divided, the result 
+#         is a floating point. The integer division operator returns the integer 
+#         portion of the quotient by truncating any fractional part.
+#   2. boolean (logic type)
+#       --> Supported operations for booleans: and, or, not 
+
+
 
 ###########################################################################################
 ###########################################################################################
 ########## Sect 1.8.2: Built-in Collection Data Types
 ###########################################################################################
 ###########################################################################################
+# Two classes of Collection Data Types
+#   1. ordered/sequences
+#       - lists/arrays
+#       - tuples
+#       - strings
+#   2. unordered
+#       - dictionaries
+#       - sets 
+
 
 ###########################################################################################
 ########## SEQUENCES
@@ -51,11 +70,11 @@
 # # OPERATORS SUPPORTED BY ALL SEQUENCES
 # ******************************************************
 # # indexing []
-# concatenation +
-# membership in 
-# length len
-# slicing [:] 
-# repetition *  : concatenate a repeated number of times
+# concatenation: +
+# membership: in 
+# length: len
+# slicing: [:] 
+# repetition: *  :
 #   -> used for quick initialization of lists
 #      eg   >>> my_list = [0] * 4
 #           >>> my_list
@@ -76,12 +95,7 @@
 # that index() throws a ValueError when the target is not found, while find() returns -1
 
 
-
-
-
-###########################################################################################
 #################### LISTS/ARAYS 
-###########################################################################################
 # ******************************************************
 # METHODS SUPPORTED BY LISTS (in addition to operators suppored by all sequences)
 # ******************************************************
@@ -132,12 +146,7 @@
 # ['jazmin velez', '']
 
 
-
-
-
-###########################################################################################
 ########## STRINGS
-###########################################################################################
 # ******************************************************
 # METHODS SUPPORTED BY STRINGS (in addition to operators suppored by all sequences)
 # ******************************************************
@@ -180,9 +189,11 @@
 
 
 
-
-
 ###########################################################################################
+########## UNORDERED COLLECTIONS 
+###########################################################################################
+
+
 ########## SETS 
 ###########################################################################################
 # ******************************************************
@@ -191,7 +202,6 @@
 # in curly braces. The empty set is represented by set(). Sets are heterogeneous. 
 # The empty set is represented by set(). 
 # NOTE: if you try to initialize an empty set using {}, it will behave as a dict and NOT a set
-
 # ******************************************************
 # OPERATORS SUPPORTED BY SETS(in addition to operators suppored by all collections)
 # ******************************************************
@@ -230,7 +240,6 @@
 #              a.add([1,2])
 #              ~~~~~^^^^^^^
 #          TypeError: unhashable type: 'list'
-
 # ******************************************************
 # METHODS SUPPORTED BY SETS
 # ******************************************************
@@ -267,15 +276,11 @@
 # Removes all elements from the set
 
 
-
-
-
-###########################################################################################
 ########## DICTIONARIES 
 ###########################################################################################
 # ******************************************************
 # OPERATORS SUPPORTED BY DICTIONARIES(in addition to operators suppored by all collections)
-# *****************
+# ******************************************************
 # []
 # myDict[k]
 # Returns the value associated with k, otherwise its an error
@@ -286,8 +291,7 @@
 #
 # del
 # del adict[key]
-# Removes the entry from the dictionary*************************************
-
+# Removes the entry from the dictionary
 # ******************************************************
 # METHODS SUPPORTED BY DICTIONARIES
 # ******************************************************
@@ -311,141 +315,9 @@
 # adict.get(k,alt)
 # Returns the value associated with k, alt otherwise
 
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-########## Sect 1.9: Input and Output
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-
-# The value returned by input() will always be a string
 
 
 
-
-
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-########## Sect 1.10: Control Structures
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-# Two main control structures:
-#   1. Iteration
-#      - while loop
-#      - for loop
-#   2. Selection
-#      - if
-# example of a nested list comprehension
-#   --> USING NESTED LOOPS:
-#       wordlist = ['cat','dog','rabbit']
-#       letterlist = [ ]
-#       for aword in wordlist:
-#           for aletter in aword:
-#               letterlist.append(aletter)
-#       print(letterlist)
-
-#   --> USING CHAINED LIST COMPREHANSION 
-#       wordlist = ['cat','dog','rabbit']
-#       letterlist = set([letter for word in wordlist for letter in word])
-#       print(letterlist)
-
-
-
-
-
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-########## Sect 1.11: Exception Handling
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-# There are two types of errors that typically occur when writing programs:
-#     1. syntax error: the programmer has made a mistake in the structure
-#        of a statement or expression.
-#     2. exception(ie logic/runtime error): logic error leads to a runtime error that causes the 
-#        program to terminate. These types of runtime errors are typically called exceptions.
-
-# Catching exceptions:
-#   >>>
-#   try:
-#          print(math.sqrt(anumber))
-#       except:
-#          print("Bad Value for square root")
-#          print("Using absolute value instead")
-#          print(math.sqrt(abs(anumber)))
-# 
-#   Bad Value for square root
-#   Using absolute value instead
-#   4.79583152331
-#   >>>
-
-# Raising custom exceptions:
-#   if anumber < 0:
-#      raise RuntimeError("You can't use a negative number")
-#   else:
-#      print(math.sqrt(anumber))
-#   
-#   Traceback (most recent call last):
-#     File "<stdin>", line 2, in <module>
-#   RuntimeError: You can't use a negative number
-#   >>>
-
-
-
-
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-########## Sect 1.12: Defining Functions
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-
-# Classes can be organized into hierarchies.
-
-# A class constructor should always invoke the constructor of its parent before 
-# continuing on with its own data and behavior.
-
-# LEFT OFF HERE
-
-
-
-
-
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-########## Sect 1.13: OOP in Python: Defining Classes
-###########################################################################################
-###########################################################################################
-###########################################################################################
-###########################################################################################
-
-
-
-
-
-# GENERAL NOTES:
-# lambda functions
-# map, filter, zip functions
-#    -> zip produces a "list" of tuples that has length equal to the minimum length of
-#       the iterables passed in 
-# callback functions
-# tuple unpacking, *args, **kwargs
-# sort by key
 
 if __name__ == "__main__":
     pass
